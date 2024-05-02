@@ -1,6 +1,6 @@
 ## Structure of Reproducibility code
 
-This file describes the folder structure for all the code used in **Luca Presicce** and Sudipto Banerjee (2024+) *"Bayesian Transfer Learning and Divide-Conquer Models for Massive Spatial Datasets"*. For any further questions, or problems/bugs concerning reproducibility, please contact the author/maintainer [**Luca Presicce**](https://lucapresicce.github.io/) (l.presicce@campus.unimib.it).
+This file describes the folder structure for all the code used in [**Luca Presicce**](https://lucapresicce.github.io/) and Sudipto Banerjee (2024+) *"Bayesian Transfer Learning and Divide-Conquer Models for Massive Spatial Datasets"*. For any further questions, or problems/bugs concerning reproducibility, please contact the author/maintainer [**Luca Presicce**](https://lucapresicce.github.io/) (l.presicce@campus.unimib.it).
 He will be happy to help you! :)
 
 ---------------------------------------------------------------------------------------------------------------------------
