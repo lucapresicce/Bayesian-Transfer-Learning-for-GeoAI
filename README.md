@@ -1,5 +1,5 @@
 # Bayesian-Transfer-Learning-and-Divide-Conquer-Models-for-Massive-Spatial-Datasets
-This Repository contains the Reproducibility Material of "_Bayesian Transfer Learning and Divide-Conquer Models for Massive Spatial Datasets_" (**Luca Presicce** and Sudipto Banerjee, 2024+). In the following is included a brief roadmap of available code and data, comprehensive of all the detailed scripts used for simulations and data analysis. In addition, also all the functions implemented in the package `ASMK` (**Luca Presicce**) are available, for further details see [ASMK R package repository](https://github.com/lucapresicce/ASMK).
+This Repository contains the Reproducibility Material of "_Bayesian Transfer Learning and Divide-Conquer Models for Massive Spatial Datasets_" ([**Luca Presicce**](https://lucapresicce.github.io/) and Sudipto Banerjee, 2024+). In the following is included a brief roadmap of available code and data, comprehensive of all the detailed scripts used for simulations and data analysis. In addition, also all the functions implemented in the package `ASMK` ([**Luca Presicce**](https://lucapresicce.github.io/)) are available, for further details see [ASMK R package repository](https://github.com/lucapresicce/ASMK).
 
 --------------------------------------------------------------------------------
 ## Roadmap
@@ -17,7 +17,7 @@ This Repository contains the Reproducibility Material of "_Bayesian Transfer Lea
 | :--- | :---: |
 | Author | Luca Presicce (l.presicce@campus.unimib.it) |
 | Maintainer | Luca Presicce (l.presicce@campus.unimib.it) |
-| Reference | **Luca Presicce** and Sudipto Banerjee (2024+) *"Bayesian Transfer Learning and Divide-Conquer Models for Massive Spatial Datasets"*  |
+| Reference | [**Luca Presicce**](https://lucapresicce.github.io/) and Sudipto Banerjee (2024+) *"Bayesian Transfer Learning and Divide-Conquer Models for Massive Spatial Datasets"*  |
 
 <!--
 Maintainer: l.presicce@campus.unimib.it
