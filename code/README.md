@@ -1,24 +1,33 @@
-## Structure of Reproducibility code
+# Sourcing code for Reproducibility 
 
-This file describes the folder structure for all the code used in [**Luca Presicce**](https://lucapresicce.github.io/) and Sudipto Banerjee (2024+) *"Bayesian Transfer Learning and Divide-Conquer Models for Massive Spatial Datasets"*. For any further questions, or problems/bugs concerning reproducibility, please contact the author/maintainer [**Luca Presicce**](https://lucapresicce.github.io/) (l.presicce@campus.unimib.it).
-He will be happy to help you! :)
+## spBPS R package
+Most of the Data Analysis, and Simulations, used the code implemented in the R package `spBPS`, available at this repository [spBPS Github Repository](https://github.com/lucapresicce/spBPS). This is an optimized Rcpp-based package, which provides the main functions to perform the Double Bayesian Predictive Stacking approach presented in the manuscript related to this repository. Since the package is not already available on CRAN (working for submission, and hopefully soon available), we suggest the following procedure before starting the execution of the Script to reproduce the results. Firstly, must be installed the `devtools` R library, then, check for its presence on your device, otherwise install it:
+```{r, echo = F, eval = F, collapse = TRUE}
+if (!require(devtools)) {
+  install.packages("devtools", dependencies = TRUE)
+}
+```
+Once `devtools` is available on the local machine, installation proceeds as follows:
+```{r, echo = F, eval = F, collapse = TRUE}
+devtools::install_github("lucapresicce/spBPS")
+```
 
----------------------------------------------------------------------------------------------------------------------------
+## Rcpp source file
+However, for the Scripts to reproduce the results in Section 5.2, and Supplement Section 4.2, it is mandatory to compile a `.cpp` file, which contains internal functions of package 'spBPS'. Even if the following procedure can be found within the scripts themself, we report here the execution code lines:
+```{r, echo = F, eval = F, collapse = TRUE}
+# checking for Rcpp library
+if (!require(Rcpp)) {
+  install.packages("Rcpp", dependencies = TRUE)
+}
 
-* reproducibility-code
-  * analyses
-    * univariate
-      * exec_analysis_univariate.R **[contains R script for univariate data analysis]**
-      * univariate.rar **[compressed archive - contains data for univariate data analysis]**
-    * multivariate
-      * exec_analysis_multivariate.R **[contains R script for multivariate data analysis]**
-      * multivariate.rar **[compressed archive - contains data for multivariate data analysis]**
-  * simulations
-    * univariate
-      * exec_comparison_sim.R **[contains R script for simulation: _ASMK vs SMK_]**
-      * exe_comparison_seq.R **[contains R script for simulation: _Transfer learning_]**
-    * multivariate
-      * exec_comparison_sim_M.R **[contains R script for simulation: _ASMK vs SMK_]**
-      * exe_comparison_seq_M.R **[contains R script for simulation: _Transfer learning_]**.
+# sourcing Rcpp functions
+Sys.setenv(PKG_CXXFLAGS = "-Ofast")
+sourceCpp("code/src/code.cpp")
+```
+There are two specifications to point out here. Formerly, it is mandatory to set as a working directory the main folder of this repository (following the instructions in the Workflow to reproduce the analyses). Lastly, the optimizing flag is called before compiling by the command `Sys.setenv(PKG_CXXFLAGS = "-Ofast")`. That is not mandatory, however, computational performances may vary due to its effects on optimization matrix calculations.
 
-             
+
+
+
+
+
