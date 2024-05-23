@@ -6,7 +6,7 @@ library(raster)
 
 rm(list = ls())
 # set the reproducibility-repository as working directory
-setwd("D:/presi/Desktop/documenti/Bayesian-Transfer-Learning-and-Divide-Conquer-Models-for-Massive-Spatial-Datasets/")
+setwd(".../Bayesian-Transfer-Learning-and-Divide-Conquer-Models-for-Massive-Spatial-Datasets/")
 
 # load the downloaded data (from source available in README)
 datadir <- file.path(getwd(), "data")
