@@ -40,7 +40,7 @@ q <- 3
 
 # parameters
 B <- matrix(c(-0.75, 2.20, 1.05, -1.1, -0.35, 0.45), p, q)
-sigma2 <- diag(2, q)
+sigma2 <- matrix(c(2, 0.8, 0.2, 0.8, 2, -0.45, 0.2, -0.45, 2), q, q)
 alfa <- 0.8
 phi <- 4
 
@@ -340,7 +340,7 @@ postint_ms <- mcmc_recover_intervals(posterior_ms, true_par,
 # predictions
 YK <- data_part$Y_list[[K]]; XK <- data_part$X_list[[K]]; crd_K <- data_part$crd_list[[K]]
 tic()
-predictions_ws <- r_pred_marg_MvT(data = list(Y = YK, X = XK), X_u = X_u, R = 250,
+predictions_ms <- r_pred_marg_MvT(data = list(Y = YK, X = XK), X_u = X_u, R = 250,
                                   d_u = arma_dist(crd_u), d_us = arma_dist(rbind(crd_u, crd_K)),
                                   hyperpar = hpar, poster = out)$Yu
 toc()
@@ -525,7 +525,7 @@ postint_hms <- mcmc_recover_intervals(posterior_hms, true_par,
 # predictions
 YK <- data_part$Y_list[[K]]; XK <- data_part$X_list[[K]]; crd_K <- data_part$crd_list[[K]]
 tic()
-predictions_ws <- r_pred_marg_MvT(data = list(Y = YK, X = XK), X_u = X_u, R = 250,
+predictions_hms <- r_pred_marg_MvT(data = list(Y = YK, X = XK), X_u = X_u, R = 250,
                                   d_u = arma_dist(crd_u), d_us = arma_dist(rbind(crd_u, crd_K)),
                                   hyperpar = hpar, poster = out)$Yu
 toc()
