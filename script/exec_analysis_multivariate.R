@@ -84,7 +84,7 @@ eda_ind <- sample.int(N, round(N*0.025))
 # computing the maximum distance
 d.max <- sqrt((max(crd_S[,1]) - min(crd_S[,1]))^2 +
                 (max(crd_S[,2]) - min(crd_S[,2]))^2)
-d.max # around 386.0908
+d.max # around 386.0908 (multiply by 111.139) ~> 42,909 KM
 
 # check the variogram for the first response
 v.res_y1 <- variog(coords = crd_S[eda_ind, ], data = Y_S[eda_ind, 1],

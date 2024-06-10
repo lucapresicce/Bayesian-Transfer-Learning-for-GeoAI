@@ -80,22 +80,18 @@ gc()
 
 # EDA -------------------------------------------------------------------------
 
-# linear model to collect residual
-lm.obj <- lm(Y ~ as.matrix(X))
-summary(lm.obj)
-
 # subsample for feasible EDA
 set.seed(1997)
 subind <- sample.int(N, round(N*0.005))
 
 # computing the maximum distance
-d.max <- sqrt((max(SST_train$projX) - min(SST_train$projX))^2 + 
-                (max(SST_train$projY) - min(SST_train$projY))^2)
-d.max # around 43.520 KM
+d.max <- sqrt((max(SST_train$lon) - min(SST_train$lon))^2 + 
+                (max(SST_train$lat) - min(SST_train$lat))^2)
+d.max # around 391.4029 (multiply by 111.139) ~> 43,520 KM
 
 # check the variogram 
 v.resp <- variog(coords = crd_S[subind, ], data = Y[subind], 
-                 uvec = (seq(0, 4*d.max, length = 30))) # 30
+                 uvec = (seq(0, 0.8*d.max, length = 50))) # 30
 
 vario.fit <- variofit(v.resp, cov.model="exponential")
 summary(vario.fit)
@@ -118,19 +114,17 @@ text(70, 12.5,
      bquote(tau^2 ~ " = " ~ .(round(vario.fit$nugget, 2))),
      col = 2, cex = 2)
 abline(h = vario.fit$cov.pars[1], col = "green4", lwd = 2, lty = 2)
-text(25, 115, 
+text(25, 110, 
      bquote(sigma^2 ~ " = " ~ .(round(vario.fit$cov.pars[1], 2))), 
      col = "green4", cex = 1.5)
 abline(v = vario.fit$practicalRange, col = "green4", lwd = 2, lty = 2)
-text(127.5, 60, 
+text(120, 60, 
      bquote(rho[0] ~ " = " ~ .(round(vario.fit$practicalRange, 2))), 
      col = "green4", cex = 1.5)
 
 dev.off()
 
-
 # free memory
-rm("lm.obj")
 gc()
 
 # SubSubsample for model fitting ----------------------------------------------
