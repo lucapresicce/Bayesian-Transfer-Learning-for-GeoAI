@@ -94,12 +94,40 @@ d.max <- sqrt((max(SST_train$projX) - min(SST_train$projX))^2 +
 d.max # around 43.520 KM
 
 # check the variogram 
-v.resid <- variog(coords = crd_S[subind, ], data = resid(lm.obj)[subind], 
-                  uvec = (seq(0, 3*d.max, length = 30))) # 30
+v.resp <- variog(coords = crd_S[subind, ], data = Y[subind], 
+                 uvec = (seq(0, 4*d.max, length = 30))) # 30
 
-par(mfrow=c(1,1))
-vario.fit <- variofit(v.resid, cov.model="exponential")
+vario.fit <- variofit(v.resp, cov.model="exponential")
 summary(vario.fit)
+print(vario.fit)
+
+# plotting the variogram
+# plotting results
+width <- 360*2
+height <- 360
+pointsize <- 12
+png("output/eda_univariate.png", width = width, height = height, pointsize = pointsize, family = "sans")
+
+plot(v.resp, pch = 19, frame.plot = FALSE, axes = F, ylim = c(0, max(v.resp$v)), xlim = c(0, vario.fit$max.dist))
+box(bty="l")
+axis(2)
+axis(1) 
+lines(vario.fit, col = 4, lwd = 2, lty = 2)
+abline(h = vario.fit$nugget, col = 2, lwd = 3)
+text(70, 12.5, 
+     bquote(tau^2 ~ " = " ~ .(round(vario.fit$nugget, 2))),
+     col = 2, cex = 2)
+abline(h = vario.fit$cov.pars[1], col = "green4", lwd = 2, lty = 2)
+text(25, 115, 
+     bquote(sigma^2 ~ " = " ~ .(round(vario.fit$cov.pars[1], 2))), 
+     col = "green4", cex = 1.5)
+abline(v = vario.fit$practicalRange, col = "green4", lwd = 2, lty = 2)
+text(127.5, 60, 
+     bquote(rho[0] ~ " = " ~ .(round(vario.fit$practicalRange, 2))), 
+     col = "green4", cex = 1.5)
+
+dev.off()
+
 
 # free memory
 rm("lm.obj")
@@ -128,17 +156,17 @@ n <- nrow(x)
 p <- ncol(x)
 
 set.seed(1234)
-bLM <- bayesLMConjugate(y~x-1, n.samples = 300, 
+bLM <- bayesLMConjugate(y~x-1, n.samples = 20000, 
                         beta.prior.mean = rep(0, times = p),
                         beta.prior.precision = matrix(0, nrow=p, ncol=p),
-                        prior.shape = 2, prior.rate = 1)
+                        prior.shape = 2, prior.rate = 2)
 
 round(summary(bLM$p.beta.tauSq.samples)$statistics, 2)
 round(summary(bLM$p.beta.tauSq.samples)$quantiles, 2)
 
 # posterior predictive
 bLM.pred <- spPredict(bLM, pred.covars = x_u, pred.coords = crd_u,
-                      start = 1)
+                      start = 10000)
 
 y.bLM <- apply(bLM.pred$p.y.predictive.samples, 1, mean)
 
@@ -281,6 +309,19 @@ elapsed_times <- c("Fitting" = as.numeric(fit_time$toc-fit_time$tic),
 
 cat("minutes elapsed for fully model-based uncertainty quantification : \n"); round(elapsed_times/60, 2)
 
+
+# Posterior inference ---------------------------------------------------------
+
+# collecting posterior sample
+smp <- sapply(1:R, function(r){c(predictions[[r]][[4]], predictions[[r]][[3]][,1:p])})
+post_mean_smp <- rowMeans(smp)
+post_var_smp <- apply(smp, 1, sd)
+post_qnt_smp <- apply(smp, 1, quantile, c(0.025, 0.5, 0.975))
+post_mean_hyp <- sapply(1:K, function(k)t(expand_grid_cpp(delta_seq, phi_seq)) %*% W_list[[k]]) %*% Wbps
+post_var_hyp <- sapply(1:K, function(k)t(expand_grid_cpp(delta_seq, phi_seq)) %*% W_list[[k]])^2 %*% Wbps - (post_mean_hyp^2)  
+
+posterior_bps <- t(smp)
+colnames(posterior_bps) <- c("sigma^2", "beta[1]", "beta[2]", "beta[3]")
 
 # Plotting data --------------------------------------------------
 
