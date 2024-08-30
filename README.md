@@ -63,7 +63,7 @@ Running `exec_comparison_seq_M.R` produces the results, contained in the followi
 * _interpolation plots_: `surface_M_TLwell.png`, `surface_M_TLmis.png`, `surface_M_TLhms.png`, `surface_M_TLSbps.png`;
 * _posterior credible interval plots_: `CIpost_M_TLwell.png`, `CIpost_M_TLmis.png`, `CIpost_M_TLhms.png`, `CIpost_M_TLbps.png`.
 
-This section displayed `surface_M_TLhms.png`, and `CIpost_M_TLhms.png` as Figures, and the RMSPEs are placed within the interpolation plots `surface_M_TLwell.png`, `surface_M_TLmis.png`, `surface_M_TLhms.png`, `surface_M_TLSbps.png`. The remaining contents not shown in this Section are presented in the Supplement Section 3.2.
+This section displayed `surface_M_TLbps.png`, and `CIpost_M_TLbps.png` as Figures, and the RMSPEs are placed within the interpolation plots `surface_M_TLwell.png`, `surface_M_TLmis.png`, `surface_M_TLhms.png`, `surface_M_TLSbps.png`. The remaining contents not shown in this Section are presented in the Supplement Section 3.2.
 
 Here the notation is the following: _type_setting_TLspecification_. For example, type = surface, setting = M (multivariate), specification = hms (highly misspecified), lead to the surface plot interpolation for the multivariate highly misspecified model, that is `surface_M_TLhms.png`.
 
