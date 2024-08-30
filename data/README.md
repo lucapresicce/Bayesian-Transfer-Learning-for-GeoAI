@@ -1,6 +1,6 @@
 # Data Availability for Reproducibility 
 
-"_Building Artificially Intelligent Geostatistical Systems Using Bayesian Predictive Stacking_" considers two sets of georeferenced real data, strictly related to critical problems in nowadays Climate Sciences. As a reminder, the analyses work on the Sea Surface Temperature data, and the Vegetation Index data, providing a full Bayesian inference over the entire global surface, including millions of units. Raw data is freely available for download from the following web portals: [NOAA Data Access](https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1sstd8dayR20190SQ_Lon0360.html), and [EarthData MOD13C1 v061](https://lpdaac.usgs.gov/products/mod13c1v061/), for whose metadata is available.
+"_Bayesian Transfer Learning for Artificially Intelligent Geospatial Systems: A Predictive Stacking Approach_" considers two sets of georeferenced real data, strictly related to critical problems in nowadays Climate Sciences. As a reminder, the analyses work on the Sea Surface Temperature data, and the Vegetation Index data, providing a full Bayesian inference over the entire global surface, including millions of units. Raw data is freely available for download from the following web portals: [NOAA Data Access](https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1sstd8dayR20190SQ_Lon0360.html), and [EarthData MOD13C1 v061](https://lpdaac.usgs.gov/products/mod13c1v061/), for whose metadata is available.
 
 ## Preprocessing
 
