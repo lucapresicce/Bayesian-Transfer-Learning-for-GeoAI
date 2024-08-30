@@ -1,5 +1,5 @@
-# Bayesian-Transfer-Learning-and-Divide-Conquer-Models
-This Repository contains the Reproducibility Material of "_Building Artificially Intelligent Geostatistical Systems Using Bayesian Predictive Stacking_" ([**Luca Presicce**](https://lucapresicce.github.io/) and Sudipto Banerjee). The following includes a roadmap for this repository, which follows the Workflow to reproduce the analyses. Comprehensive descriptions, and suggestions, for performing the analyses are provided subsequently.
+# Bayesian-Transfer-Learning-for-GeoAI
+This Repository contains the Reproducibility Material of "_Bayesian Transfer Learning for Artificially Intelligent Geospatial Systems: A Predictive Stacking Approach_" ([**Luca Presicce**](https://lucapresicce.github.io/) and Sudipto Banerjee). The following includes a roadmap for this repository, which follows the Workflow to reproduce the analyses. Comprehensive descriptions, and suggestions, for performing the analyses are provided subsequently.
 In addition, also all the functions implemented in the package `spBPS` ([**Luca Presicce**](https://lucapresicce.github.io/)) are available in the **code** folder, for further details see [spBPS R package repository](https://github.com/lucapresicce/spBPS).
 
 --------------------------------------------------------------------------------
@@ -16,7 +16,7 @@ In addition, also all the functions implemented in the package `spBPS` ([**Luca 
 ---------------------------------------------------------------------------------------------------------------------------
 ## Workflow for Reproducible Results
 
-This section provides an extensive Workflow to reproduce all the numbers, and figures displayed in "_Building Artificially Intelligent Geostatistical Systems Using Bayesian Predictive Stacking_" by [**Luca Presicce**](https://lucapresicce.github.io/) and Sudipto Banerjee. The Workflow is presented separately for each Section, and anticipated by a suggested setup to ease the execution of the analyses.
+This section provides an extensive Workflow to reproduce all the numbers, and figures displayed in "_Bayesian Transfer Learning for Artificially Intelligent Geospatial Systems: A Predictive Stacking Approach_" by [**Luca Presicce**](https://lucapresicce.github.io/) and Sudipto Banerjee. The Workflow is presented separately for each Section, and anticipated by a suggested setup to ease the execution of the analyses.
 
 ### Working directory
 
@@ -26,7 +26,7 @@ setwd(".../Bayesian-Transfer-Learning-and-Divide-Conquer-Models")
 ```
 where `".../"` represents the path on the author's laptop, and then, the directory path where this repository should be placed before executing the scripts. In particular, the best option is to clone this repository on the local machine, by executing the following block of code into a `shell`. Once the location to clone this repository, open the command line and execute:
 ```{sh}
-git clone https://github.com/lucapresicce/Bayesian-Transfer-Learning-and-Divide-Conquer-Models.git
+git clone https://github.com/lucapresicce/Bayesian-Transfer-Learning-for-GeoAI.git
 ```
 If not possible, it is possible to execute the scripts by omitting the `setwd("...")` command, but it is mandatory to create two folders in the working directory:
 * _code_: in which the `src` folder (from the `code` folder of this repository) must be copied, allowing the compilation of the `.cpp` file needed;
