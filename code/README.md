@@ -13,7 +13,7 @@ devtools::install_github("lucapresicce/spBPS")
 ```
 
 ## Rcpp source file
-However, for the Scripts `exec_comparison_seq_M.R`, and `exec_comparison_seq.R` to reproduce the results in Section 5.2, and Supplement Section 4.2 respectively, it is mandatory to compile a `.cpp` file, which contains internal functions of package 'spBPS'. Even if the following procedure can be found within the scripts themself, we report here the execution code lines (already present in the scripts):
+However, for the Scripts `exec_comparison_seq_M.R`, and `exec_comparison_seq.R` to reproduce the results in Section 4.2, and Supplement Section 5.2 respectively, it is mandatory to compile a `.cpp` file, which contains internal functions of package 'spBPS'. Even if the following procedure can be found within the scripts themself, we report here the execution code lines (already present in the scripts):
 ```{r, echo = F, eval = F, collapse = TRUE}
 # checking for Rcpp library
 if (!require(Rcpp)) {
