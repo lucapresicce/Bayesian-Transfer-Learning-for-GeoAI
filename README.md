@@ -92,7 +92,7 @@ Running `exec_subset_sensitivity.R` produces the results, contained in the follo
 
 In this section is displayed `subset_sens.png`.
 
-### Supplement Section 4.1
+### Supplement Section 5.1
 
 Running `exec_comparison_sim.R` produces the results, contained in the following objects: 
 * _timing & RMSPE results_: `simulation_univariate_5_500.Rdata`, `simulation_univariate_5_1000.Rdata`, `simulation_univariate_10_500.Rdata`, `simulation_univariate_10_1000.Rdata`;
@@ -104,7 +104,7 @@ In this section are displayed `surface_5_500.png`, `UC_5_500.png`, `CIpost_5_500
 
 Here the notation is the following: _type_setting_n_subsetsize_. For example, type = surface, setting = (univariate), n = 5 (thousand), and subset size = 500, lead to the surface plot interpolation of the $n=5000$ and $K=10$ dataset, for univariate models, that is `surface_5_500.png`
 
-### Supplement Section 4.2
+### Supplement Section 5.2
 
 Running `exec_comparison_seq.R` produces the results, contained in the following objects: 
 * _interpolation plots_: `surface_TLwell.png`, `surface_TLmis.png`, `surface_TLhms.png`, `surface_TLSbps.png`;
