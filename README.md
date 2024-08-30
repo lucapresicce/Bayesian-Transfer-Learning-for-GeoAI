@@ -92,8 +92,6 @@ Running `exec_subset_sensitivity.R` produces the results, contained in the follo
 
 In this section is displayed `subset_sens.png`.
 
-Here the notation is the following: _type_setting_n_subsetsize_. For example, type = surface, setting = (univariate), n = 5 (thousand), and subset size = 500, lead to the surface plot interpolation of the $n=5000$ and $K=10$ dataset, for univariate models, that is `surface_5_500.png`
-
 ### Supplement Section 4.1
 
 Running `exec_comparison_sim.R` produces the results, contained in the following objects: 
