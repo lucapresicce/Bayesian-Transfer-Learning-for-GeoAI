@@ -2,7 +2,7 @@
 ## BPS vs SMK COMPARISON - 5K - 500 ############################################
 rm(list = ls())
 gc()
-setwd(".../Bayesian-Transfer-Learning-and-Divide-Conquer-Models-for-Massive-Spatial-Datasets")
+setwd(".../Bayesian-Transfer-Learning-for-GeoAI")
 
 # Packages --------------------------------------------------------------------
 library(spBPS)

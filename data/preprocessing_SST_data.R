@@ -43,7 +43,7 @@
 #======================================================================
 # Copyright (c) 2012, California Institute of Technology
 #======================================================================
-# setwd(".../Bayesian-Transfer-Learning-and-Divide-Conquer-Models-for-Massive-Spatial-Datasets/data")
+# setwd(".../Bayesian-Transfer-Learning-for-GeoAI/data")
 
 rm(list = ls())
 library("RNetCDF")

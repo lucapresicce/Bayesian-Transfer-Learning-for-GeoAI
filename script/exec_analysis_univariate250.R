@@ -2,7 +2,7 @@
 ## Univariate DATA ANALYSIS - univariate model #########################################
 rm(list = ls())
 gc()
-setwd(".../Bayesian-Transfer-Learning-and-Divide-Conquer-Models-for-Massive-Spatial-Datasets/")
+setwd(".../Bayesian-Transfer-Learning-for-GeoAI")
 
 # Packages --------------------------------------------------------------------
 library(spBPS)
