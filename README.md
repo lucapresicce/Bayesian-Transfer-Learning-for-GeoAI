@@ -16,7 +16,7 @@ In addition, also all the functions implemented in the package `spBPS` ([**Luca 
 ---------------------------------------------------------------------------------------------------------------------------
 ## Workflow for Reproducible Results
 
-This section provides an extensive Workflow to reproduce all the numbers, and figures displayed in "_Bayesian Transfer Learning for Artificially Intelligent Geospatial Systems: A Predictive Stacking Approach_" by [**Luca Presicce**](https://lucapresicce.github.io/) and Sudipto Banerjee. The Workflow is presented separately for each Section, and anticipated by a suggested setup to ease the execution of the analyses.
+This section provides an extensive Workflow to reproduce all the numbers, and figures displayed in "_Bayesian Transfer Learning for Artificially Intelligent Geospatial Systems: A Predictive Stacking Approach_". The Workflow is presented separately for each Section, and anticipated by a suggested setup to ease the execution of the analyses.
 
 ### Working directory
 
