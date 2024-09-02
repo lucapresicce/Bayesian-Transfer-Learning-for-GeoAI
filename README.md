@@ -24,7 +24,7 @@ Since the structure of the R Scripts, the computations are organized considering
 ```{r, echo = F, eval = F, collapse = TRUE}
 setwd(".../Bayesian-Transfer-Learning-for-GeoAI")
 ```
-where `".../"` represents the path on the author's laptop, and then, the directory path where this repository should be placed before executing the scripts. In particular, the best option is to clone this repository on the local machine, by executing the following block of code into a `shell`. Once the location to clone this repository, open the command line and execute:
+where `".../"` represents the path on the user's machine, and then, the directory path where this repository should be placed before executing the scripts. The best option is to clone this repository on the local machine, by executing the following block of code into a `shell`. Once the location to clone this repository is chosen, open the command line and execute:
 ```{sh}
 git clone https://github.com/lucapresicce/Bayesian-Transfer-Learning-for-GeoAI.git
 ```
