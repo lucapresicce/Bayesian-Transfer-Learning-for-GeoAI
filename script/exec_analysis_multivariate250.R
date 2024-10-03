@@ -456,7 +456,11 @@ plot_map_col <- function(data, title, fill_label, low_color, high_color) {
 plot_map <- function(data, title, fill_label, Pal) {
   # Calcola i breakpoints e la palette di colori
   breaks <- classIntervals(data$z, n = 50, style = "pretty")$brks
-  col.pal <- rev(colorRampPalette(brewer.pal(9, Pal)[1:9])(length(breaks) - 1))
+  if (Pal == "BrBG") {
+    col.pal <- colorRampPalette(brewer.pal(9, Pal)[1:9])(length(breaks) - 1)
+  } else {
+    col.pal <- rev(colorRampPalette(brewer.pal(9, Pal)[1:9])(length(breaks) - 1))
+  }
   # Miglioramo la legenda
   legend_labels <- legend_labels <- pretty(data$z, n = 5)
   breaks <- classIntervals(data$z, n = 5, style = "pretty")$brks
@@ -479,12 +483,12 @@ plot_map <- function(data, title, fill_label, Pal) {
 }
 
 # Crea i quattro grafici
-NDVI_plot      <- plot_map(NDVI_df, "NDVI - train set", "NDVI"            , Pal = "YlGn")
-RR_plot        <- plot_map(RR_df, "Red Reflectance - train set", "RedRefl", Pal = "RdBu")
-NDVI_test_plot <- plot_map(NDVI_test_df, "NDVI - train set", "NDVI"            , Pal = "YlGn")
-RR_test_plot   <- plot_map(RR_test_df, "Red Reflectance - train set", "RedRefl", Pal = "RdBu")
-NDVI_hat_plot  <- plot_map(NDVI_hat_df, "NDVI - train set", "NDVI"            , Pal = "YlGn")
-RR_hat_plot    <- plot_map(RR_hat_df, "Red Reflectance - train set", "RedRefl", Pal = "RdBu")
+NDVI_plot      <- plot_map(NDVI_df,      "NDVI - train set",             "NDVI"   , Pal = "BrBG")
+RR_plot        <- plot_map(RR_df,        "Red Reflectance - train set",  "RedRefl", Pal = "RdBu")
+NDVI_test_plot <- plot_map(NDVI_test_df, "NDVI - test set",              "NDVI"   , Pal = "BrBG")
+RR_test_plot   <- plot_map(RR_test_df,   "Red Reflectance - test set",   "RedRefl", Pal = "RdBu")
+NDVI_hat_plot  <- plot_map(NDVI_hat_df,  "NDVI - prediction",            "NDVI"   , Pal = "BrBG")
+RR_hat_plot    <- plot_map(RR_hat_df,    "Red Reflectance - prediction", "RedRefl", Pal = "RdBu")
 
 # graphical UC for Y1 (ordered)
 ord_y <- order(y_u[,1])
@@ -555,7 +559,7 @@ width <- 360*5
 height <- 360*2
 pointsize <- 12
 png("output/dataanalysis_multivariate_RR250.png", width = width, height = height, pointsize = pointsize, family = "sans")
-cowplot::plot_grid(RR_plot, RR_test_plot, uc_Y2, RR_hat_plot, nrow = 2, ncol = 2)
+grid.arrange(RR_plot, RR_test_plot, uc_Y2, RR_hat_plot, nrow = 2, ncol = 2)
 dev.off()
 
 
@@ -573,7 +577,7 @@ rm(list = ls()[which(!(ls() %in% c("results")))])
 save.image(file = "output/dataanalysis_multivariate250.RData")
 
 # to read results
-# load("output/dataanalysis_multivariate.RData")
+# load("output/dataanalysis_multivariate250.RData")
 # results$time; cat("minutes elapsed for fully model-based uncertainty quantification : \n"); round(results$time/60, 2)
 # results$metrics
 # results$comb
