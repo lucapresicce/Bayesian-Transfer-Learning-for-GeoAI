@@ -186,6 +186,10 @@ for (i in 1:length(res0)) {
   
 }
 
+# Min-Max normalization (to better comparison)
+res1_norm <- (res1-min(res1))/(max(res1)-min(res1))
+res2_norm <- (res2-min(res2))/(max(res2)-min(res2))
+
 # plotting results
 width <- 360*1.5
 height <- 360
@@ -193,21 +197,15 @@ pointsize <- 12
 png("output/subset_sens.png", width = width, height = height, pointsize = pointsize, family = "sans")
 
 par(mar = c(5, 4, 4, 6) + 0.1)
-plot(res0, res1, type = "l", col = "cornflowerblue", lwd = 2, lty = 1,
+plot(res0, res1_norm, type = "l", col = "cornflowerblue", lwd = 2, lty = 1,
      xlab = "Subset size", ylab = "Average RMSPE", main = "", frame.plot = FALSE, axes = F,)
 box(bty = "l")
 axis(2)
 axis(1) 
-points(res0[5], res1[5], col = "coral", pch = 22, lwd = 5)
-segments(x0 = res0[5], y0 = min(res1), y1 = res1[5], col = "coral", lwd = 2, lty = 1)
-text(res0[5]-100, res1[5]+0.1, "Subset size \n of 500", col = "coral", cex = 1)
-arrows(res0[5]-100, res1[5]+0.085, res0[5], res1[5]+0.005, lwd = 2, lty = 1, col = "coral")
 par(new = TRUE)
-# plot(res0, res3, type = "l", col = "seagreen", lwd = 2, lty = 5,
-plot(res0, res2, type = "l", col = "seagreen", lwd = 2, lty = 5,
+plot(res0, res2_norm, type = "l", col = "seagreen", lwd = 2, lty = 5,
      xlab = "", ylab = "", axes = FALSE, frame.plot = F)
 axis(4)
-# mtext("Iter Time (Sec)", side = 4, line = 3)
 mtext("Total Time (Sec)", side = 4, line = 3)
 
 dev.off()
