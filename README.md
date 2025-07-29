@@ -59,7 +59,7 @@ Please be aware that this script may take a **long time to execute**, depending 
 
 ### Section 4.2 - Amortized Bayesian Inference
 
-Running [`ABI_matrix.R`](./script/ABI_matrix.R) produces the results, contained in the following objects: 
+Running [`ABI_matrixNN.R`](./script/ABI_matrixNN.R) produces the results, contained in the following objects: 
 * _interpolation plots_: [`heatmap-amortized.png`](./output/heatmap-amortized.png);
 * _posterior credible interval plots_: [`parameters-amortized.png`](./output/parameters-amortized.png).
 
