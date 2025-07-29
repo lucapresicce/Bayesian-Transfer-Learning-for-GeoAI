@@ -45,7 +45,44 @@ Once devtools is available on the local machine, installation from the Github re
 devtools::install_github("lucapresicce/spBPS")
 ```
 
-### Section 4.1
+### Section 4.1 - Transfer Learning in $\mathscr{M}$-closed & $\mathscr{M}$-open settings
+
+Running `modifications_TL_M.R` produces the results, contained in the following objects: 
+* _replication results_: `replication_results.RData`;
+* _posterior metrics plot_: `TL_post.png`;
+* _predictive metrics plot_: `TL_pred.png`.
+
+In this section are displayed `TL_post.png`, `TL_pred.png` as Figures, and the contents of 50 replications, collected in `replication_results.Rdata`.
+
+### Section 4.2 - Amortized Bayesian Inference
+
+Running `ABI_matrix.R` produces the results, contained in the following objects: 
+* _interpolation plots_: `heatmap-amortized.png`;
+* _posterior credible interval plots_: `parameters-amortized.png`.
+
+This section displayed `heatmap-amortized.png` and `parameters-amortized.png` as Figures.
+
+### Section 5 - Application
+
+Running `exec_analysis_multivariate.R`, and `exec_analysis_multivariate250.R`, produces the results, contained in the following objects: 
+* _data analysis results_: `dataanalysis_multivariate.Rdata`, `dataanalysis_multivariate250.Rdata`;
+* _interpolation & uncertainty quantification plots_: `dataanalysis_multivariate.png`, `dataanalysis_multivariate250.png`;
+* _exploratory spatial data analysis_: `eda_multivariate.png`.
+
+Running `modifications_DataAppl_M.R`, produces the results, contained in the following objects: 
+* _AI model competitor results_: `review_DataAppl_M.RData`;
+
+In this section is displayed `dataanalysis_multivariate.png` as a Figure, while the results in `dataanalysis_multivariate.Rdata`, `dataanalysis_multivariate250.Rdata`, and `review_DataAppl_M.RData`, are described in the Section body along with Tables. While we present `eda_multivariate.png` in the Supplement Section 7.
+
+### Supplement Section 2.3 - Monte Carlo approximation for upper bound simulations
+
+Running `Asymp_MC_sim.R` produces the results, contained in the following object: 
+* _KL divergence upper bound simulations_: `upperbound.RData`;
+* _KL divergence upper bound plots_: `upperbound_sim.png`.
+
+In this section is displayed `upperbound_sim.png`.
+
+### Supplement Section 4.1 - Computational Performance
 
 Running `exec_comparison_sim_M.R` produces the results, contained in the following objects: 
 * _timing & RMSPE results_: `simulation_multivariate_5_500.Rdata`, `simulation_multivariate_5_1000.Rdata`, `simulation_multivariate_10_500.Rdata`, `simulation_multivariate_10_1000.Rdata`;
@@ -53,66 +90,31 @@ Running `exec_comparison_sim_M.R` produces the results, contained in the followi
 * _uncertainty quantification plots_: `UC_M_5_500.png`, `UC_M_5_1000.png`, `UC_M_10_500.png`, `UC_M_10_1000.png`;
 * _posterior credible interval plots_: `CIpost_M_5_500.png`, `CIpost_M_5_1000.png`, `CIpost_M_10_500.png`, `CIpost_M_10_1000.png`.
 
-In this section are displayed `surface_M_5_500.png`, `UC_M_5_500.png`, `CIpost_M_5_500.png` as Figures, and the contents of `simulation_multivariate_5_500.Rdata`, `simulation_multivariate_5_1000.Rdata`, `simulation_multivariate_10_500.Rdata`, `simulation_multivariate_10_1000.Rdata` within a Table. The remaining contents not shown in this Section are presented in the Supplement Section 3.1.
+Running `modifications_TimeComp.R`, produces the results, contained in the following objects: 
+* _Running time competitor_: `review_TimeComp_5k_M.RData`, `review_TimeComp_10k_M.RData`;
+
+In this section are displayed `surface_M_5_500.png`, `UC_M_5_500.png`, `CIpost_M_5_500.png` as Figures, and the contents of `simulation_multivariate_5_500.Rdata`, `simulation_multivariate_5_1000.Rdata`, `simulation_multivariate_10_500.Rdata`, `simulation_multivariate_10_1000.Rdata`, `review_TimeComp_5k_M.RData`, and `review_TimeComp_10k_M.RData` within a Table.
 
 Here the notation is the following: _type_setting_n_subsetsize_. For example, type = surface, setting = M (multivariate), n = 5 (thousand), and subset size = 500, lead to the surface plot interpolation of the $n=5000$ and $K=10$ dataset, for multivariate models, that is `surface_M_5_500.png`
 
-### Section 4.2
-
-Running `exec_comparison_seq_M.R` produces the results, contained in the following objects: 
-* _interpolation plots_: `surface_M_TLwell.png`, `surface_M_TLmis.png`, `surface_M_TLhms.png`, `surface_M_TLSbps.png`;
-* _posterior credible interval plots_: `CIpost_M_TLwell.png`, `CIpost_M_TLmis.png`, `CIpost_M_TLhms.png`, `CIpost_M_TLbps.png`.
-
-This section displayed `surface_M_TLbps.png`, and `CIpost_M_TLbps.png` as Figures, and the RMSPEs are placed within the interpolation plots `surface_M_TLwell.png`, `surface_M_TLmis.png`, `surface_M_TLhms.png`, `surface_M_TLSbps.png`. The remaining contents not shown in this Section are presented in the Supplement Section 3.2.
-
-Here the notation is the following: _type_setting_TLspecification_. For example, type = surface, setting = M (multivariate), specification = hms (highly misspecified), lead to the surface plot interpolation for the multivariate highly misspecified model, that is `surface_M_TLhms.png`.
-
-### Section 5.1
-
-Running `exec_analysis_univariate.R`, and `exec_analysis_univariate250.R`, produces the results, contained in the following objects: 
-* _data analysis results_: `dataanalysis_univariate.Rdata`, `dataanalysis_univariate250.Rdata`;
-* _interpolation & uncertainty quantification plots_: `dataanalysis_univariate.png`, `dataanalysis_univariate250.png`;
-* _exploratory spatial data analysis_: `eda_univariate.png`.
-
-In this section is displayed `dataanalysis_univariate.png` as a Figure, while the results in `dataanalysis_univariate.Rdata`, and `dataanalysis_univariate250.Rdata`, are described in the Section body along with a Table. While we present `eda_univariate.png` in the Supplement Section 6.
-
-### Section 5.2
-
-Running `exec_analysis_multivariate.R`, and `exec_analysis_multivariate250.R`, produces the results, contained in the following objects: 
-* _data analysis results_: `dataanalysis_multivariate.Rdata`, `dataanalysis_multivariate250.Rdata`;
-* _interpolation & uncertainty quantification plots_: `dataanalysis_multivariate.png`, `dataanalysis_multivariate250.png`.
-* _exploratory spatial data analysis_: `eda_multivariate.png`.
-
-In this section is displayed `dataanalysis_multivariate.png` as a Figure, while the results in `dataanalysis_multivariate.Rdata`, and `dataanalysis_multivariate250.Rdata`, are described in the Section body along with a Table. While we present `eda_multivariate.png` in the Supplement Section 6.
-
-### Supplement Section 3.3
+### Supplement Section 4.2 - Subset size sensitivity
 
 Running `exec_subset_sensitivity.R` produces the results, contained in the following object: 
 * _subsets dimension sensitivity plot_: `subset_sens.png`.
 
 In this section is displayed `subset_sens.png`.
 
-### Supplement Section 5.1
+### Supplement Section 6 - Application (Univariate)
 
-Running `exec_comparison_sim.R` produces the results, contained in the following objects: 
-* _timing & RMSPE results_: `simulation_univariate_5_500.Rdata`, `simulation_univariate_5_1000.Rdata`, `simulation_univariate_10_500.Rdata`, `simulation_univariate_10_1000.Rdata`;
-* _interpolation plots_: `surface_5_500.png`, `surface_5_1000.png`, `surface_10_500.png`, `surface_10_1000.png`;
-* _uncertainty quantification plots_: `UC_5_500.png`, `UC_5_1000.png`, `UC_10_500.png`, `UC_10_1000.png`;
-* _posterior credible interval plots_: `CIpost_5_500.png`, `CIpost_5_1000.png`, `CIpost_10_500.png`, `CIpost_10_1000.png`.
+Running `exec_analysis_univariate.R`, and `exec_analysis_univariate250.R`, produces the results, contained in the following objects: 
+* _data analysis results_: `dataanalysis_univariate.Rdata`, `dataanalysis_univariate250.Rdata`;
+* _interpolation & uncertainty quantification plots_: `dataanalysis_univariate.png`, `dataanalysis_univariate250.png`;
+* _exploratory spatial data analysis_: `eda_univariate.png`.
 
-In this section are displayed `surface_5_500.png`, `UC_5_500.png`, `CIpost_5_500.png`, `surface_5_1000.png`, `UC_5_1000.png`, `CIpost_5_1000.png`, `surface_10_500.png`, `UC_10_500.png`, `CIpost_10_500.png`, `surface_10_1000.png`, `UC_10_1000.png`, `CIpost_10_1000.png` as Figures, and the contents of `simulation_univariate_5_500.Rdata`, `simulation_univariate_5_1000.Rdata`, `simulation_univariate_10_500.Rdata`, `simulation_univariate_10_1000.Rdata`  within a Table.
+Running `modifications_DataAppl.R`, produces the results, contained in the following objects: 
+* _AI model competitor results_: `review_DataAppl.RData`;
 
-Here the notation is the following: _type_setting_n_subsetsize_. For example, type = surface, setting = (univariate), n = 5 (thousand), and subset size = 500, lead to the surface plot interpolation of the $n=5000$ and $K=10$ dataset, for univariate models, that is `surface_5_500.png`
-
-### Supplement Section 5.2
-
-Running `exec_comparison_seq.R` produces the results, contained in the following objects: 
-* _interpolation plots_: `surface_TLwell.png`, `surface_TLmis.png`, `surface_TLhms.png`, `surface_TLSbps.png`;
-* _posterior credible interval plots_: `CIpost_TLwell.png`, `CIpost_TLmis.png`, `CIpost_TLhms.png`, `CIpost_TLbps.png`.
-
-In this section are displayed `surface_TLwell.png, `CIpost_TLwell.png`, `surface_TLmis.png`, `CIpost_TLmis.png`, `surface_TLhms.png`, `CIpost_TLhms.png`, `surface_TLbps.png`, `CIpost_TLbps.png`, and the RMSPEs are placed within the interpolation plots `surface_TLwell.png`, `surface_TLmis.png`, `surface_TLhms.png`, `surface_TLSbps.png`.
-
-Here the notation is the following: _type_setting_TLspecification_. For example, type = surface, setting = (univariate), specification = hms (highly misspecified), lead to the surface plot interpolation for the univariate highly misspecified model, that is `surface_TLhms.png`.
+In this section is displayed `dataanalysis_univariate.png` as a Figure, while the results in `dataanalysis_univariate.Rdata`, `dataanalysis_univariate250.Rdata`, and `review_DataAppl.RData`, are described in the Section body along with Tables. While we present `eda_univariate.png` in the Supplement Section 7.
 
 
 --------------------------------------------------------------------------------
