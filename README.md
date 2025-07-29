@@ -24,7 +24,7 @@ Since the structure of the R Scripts, the computations are organized considering
 ```{r, echo = F, eval = F, collapse = TRUE}
 setwd(".../Bayesian-Transfer-Learning-for-GeoAI")
 ```
-where `".../"` represents the path on the user's machine, and then, the directory path where this repository should be placed before executing the scripts. The best option is to clone this repository on the local machine, by executing the following block of code into a `shell`. Once the location to clone this repository is chosen, open the command line and execute:
+where `".../"` represents the path on the user's machine, and then, the directory path where this repository should be placed before executing the scripts. The best option is to clone this repository on the local machine, by executing the following block of code in a `shell`. Once the location to clone this repository is chosen, open the command line and execute:
 ```{sh}
 git clone https://github.com/lucapresicce/Bayesian-Transfer-Learning-for-GeoAI.git
 ```
@@ -66,13 +66,13 @@ This section displayed `heatmap-amortized.png` and `parameters-amortized.png` as
 
 Running `exec_analysis_multivariate.R`, and `exec_analysis_multivariate250.R`, produces the results, contained in the following objects: 
 * _data analysis results_: `dataanalysis_multivariate.Rdata`, `dataanalysis_multivariate250.Rdata`;
-* _interpolation & uncertainty quantification plots_: `dataanalysis_multivariate.png`, `dataanalysis_multivariate250.png`;
+* _interpolation & uncertainty quantification plots_: `dataanalysis_multivariate_RR.png`, `dataanalysis_multivariate_NDVI.png`, `dataanalysis_multivariate_RR250.png`,`dataanalysis_multivariate_NDVI250.png`;
 * _exploratory spatial data analysis_: `eda_multivariate.png`.
 
 Running `modifications_DataAppl_M.R`, produces the results, contained in the following objects: 
 * _AI model competitor results_: `review_DataAppl_M.RData`;
 
-In this section is displayed `dataanalysis_multivariate.png` as a Figure, while the results in `dataanalysis_multivariate.Rdata`, `dataanalysis_multivariate250.Rdata`, and `review_DataAppl_M.RData`, are described in the Section body along with Tables. While we present `eda_multivariate.png` in the Supplement Section 7.
+In this section are displayed `dataanalysis_multivariate_RR.png`, and `dataanalysis_multivariate_NDVI.png` as Figures, while the results in `dataanalysis_multivariate.Rdata`, `dataanalysis_multivariate250.Rdata`, and `review_DataAppl_M.RData`, are described in the Section body along with Tables. While we present `eda_multivariate.png` in the Supplement Section 7.
 
 ### Supplement Section 2.3 - Monte Carlo approximation for upper bound simulations
 
