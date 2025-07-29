@@ -1,7 +1,7 @@
 # Sourcing code for Reproducibility 
 
 ## spBPS R package
-Most of the Data Analysis and Simulations used the code implemented in the R package `spBPS`, available on `CRAN `; otherwise, you can also find it at this repository [spBPS Github Repository](https://github.com/lucapresicce/spBPS). This is an optimized Rcpp-based package, which provides the main functions to perform the Double Bayesian Predictive Stacking approach presented in the manuscript related to this repository. We suggest installing the `spBPS` package directly from `CRAN` before starting the execution of the Script to reproduce the results. 
+Most of the Data Analysis and Simulations used the code implemented in the R package [`spBPS`](https://cran.r-project.org/web/packages/spBPS/spBPS.pdf), available on [`CRAN`](https://cran.r-project.org/web/packages/spBPS/index.html); otherwise, you can also find it at this repository [spBPS Github Repository](https://github.com/lucapresicce/spBPS). This is an optimized Rcpp-based package, which provides the main functions to perform the Double Bayesian Predictive Stacking approach presented in the manuscript related to this repository. We suggest installing the `spBPS` package directly from `CRAN` before starting the execution of the Script to reproduce the results. 
 ```{r, echo = F, eval = F, collapse = TRUE}
 if (!require(spBPS)) {
   install.packages("spBPS", dependencies = TRUE)
