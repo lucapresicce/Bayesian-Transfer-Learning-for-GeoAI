@@ -12,7 +12,7 @@ However, due to the massive dimensions, raw datasets are not loaded in this fold
 
 ## Case Study Datasets
 
-Introducing now `.Rdata` objects containing the preprocessed set of data used in Section 5. 
+Introducing now `.Rdata` objects containing the preprocessed set of data used for the analyses. 
 * `NDVI_data_2024_05_12.RData`: preprocessed data for multivariate analysis in Section 5 (reference date of data 05/12/2024); 
 * `SST_data_2022_06_21.RData`: preprocessed data for univariate analysis in Supplement Section 6 (reference date of data 06/21/2022); 
 
