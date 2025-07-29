@@ -47,74 +47,78 @@ devtools::install_github("lucapresicce/spBPS")
 
 ### Section 4.1 - Transfer Learning in $\mathscr{M}$-closed & $\mathscr{M}$-open settings
 
-Running `modifications_TL_M.R` produces the results, contained in the following objects: 
+Running [`modifications_TL_M.R`](./script/modifications_TL_M.R) produces the results, contained in the following objects: 
 * _replication results_: `replication_results.RData`;
-* _posterior metrics plot_: `TL_post.png`;
-* _predictive metrics plot_: `TL_pred.png`.
+* _posterior metrics plot_: [`TL_post.png`](./output/TL_post.png);
+* _predictive metrics plot_: [`TL_pred.png`](./output/TL_pred.png).
 
-In this section are displayed `TL_post.png`, `TL_pred.png` as Figures, and the contents of 50 replications, collected in `replication_results.Rdata`.
+In this section are displayed [`TL_post.png`](./output/TL_post.png), [`TL_pred.png`](./output/TL_pred.png) as Figures, and the contents of 50 replications, collected in `replication_results.Rdata`. 
+
+**Note:** The output file `replications_results.RData` is **not included in this repository** because its size exceeds GitHub's 100 MB limit (the file is approximately 210 MB). However, it is **fully reproducible** by running the script [`modifications_TL_M.R`](./script/modifications_TL_M.R).  
+Please be aware that this script may take a **long time to execute**, depending on your system’s resources. If needed, the original `replications_results.RData` file can be provided upon request.
 
 ### Section 4.2 - Amortized Bayesian Inference
 
-Running `ABI_matrix.R` produces the results, contained in the following objects: 
-* _interpolation plots_: `heatmap-amortized.png`;
-* _posterior credible interval plots_: `parameters-amortized.png`.
+Running [`ABI_matrix.R`](./script/ABI_matrix.R) produces the results, contained in the following objects: 
+* _interpolation plots_: [`heatmap-amortized.png`](./output/heatmap-amortized.png);
+* _posterior credible interval plots_: [`parameters-amortized.png`](./output/parameters-amortized.png).
 
-This section displayed `heatmap-amortized.png` and `parameters-amortized.png` as Figures.
+This section displayed [`heatmap-amortized.png`](./output/heatmap-amortized.png) and [`parameters-amortized.png`](./output/parameters-amortized.png) as Figures.
 
 ### Section 5 - Application
 
-Running `exec_analysis_multivariate.R`, and `exec_analysis_multivariate250.R`, produces the results, contained in the following objects: 
-* _data analysis results_: `dataanalysis_multivariate.Rdata`, `dataanalysis_multivariate250.Rdata`;
-* _interpolation & uncertainty quantification plots_: `dataanalysis_multivariate_RR.png`, `dataanalysis_multivariate_NDVI.png`, `dataanalysis_multivariate_RR250.png`,`dataanalysis_multivariate_NDVI250.png`;
-* _exploratory spatial data analysis_: `eda_multivariate.png`.
+Running [`exec_analysis_multivariate.R`](./script/exec_analysis_multivariate.R), and [`exec_analysis_multivariate250.R`](./script/exec_analysis_multivariate250.R), produces the results, contained in the following objects: 
+* _data analysis results_: [`dataanalysis_multivariate.Rdata`](./output/dataanalysis_multivariate.Rdata), [`dataanalysis_multivariate250.Rdata`](./output/dataanalysis_multivariate250.Rdata);
+* _interpolation & uncertainty quantification plots_: [`dataanalysis_multivariate_RR.png`](./output/dataanalysis_multivariate_RR.png), [`dataanalysis_multivariate_NDVI.png`](./output/dataanalysis_multivariate_NDVI.png), [`dataanalysis_multivariate_RR250.png`](./output/dataanalysis_multivariate_RR250.png), [`dataanalysis_multivariate_NDVI250.png`](./output/dataanalysis_multivariate_NDVI250.png);
+* _exploratory spatial data analysis_: [`eda_multivariate.png`](./output/eda_multivariate.png).
 
-Running `modifications_DataAppl_M.R`, produces the results, contained in the following objects: 
-* _AI model competitor results_: `review_DataAppl_M.RData`;
+Running [`modifications_DataAppl_M.R`](./script/modifications_DataAppl_M.R), produces the results, contained in the following objects: 
+* _AI model competitor results_: [`review_DataAppl_M.RData`](./output/review_DataAppl_M.RData);
 
-In this section are displayed `dataanalysis_multivariate_RR.png`, and `dataanalysis_multivariate_NDVI.png` as Figures, while the results in `dataanalysis_multivariate.Rdata`, `dataanalysis_multivariate250.Rdata`, and `review_DataAppl_M.RData`, are described in the Section body along with Tables. While we present `eda_multivariate.png` in the Supplement Section 7.
+In this section are displayed [`dataanalysis_multivariate_RR.png`](./output/dataanalysis_multivariate_RR.png), and [`dataanalysis_multivariate_NDVI.png`](./output/dataanalysis_multivariate_NDVI.png) as Figures, while the results in [`dataanalysis_multivariate.Rdata`](./output/dataanalysis_multivariate.Rdata), [`dataanalysis_multivariate250.Rdata`](./output/dataanalysis_multivariate250.Rdata), and [`review_DataAppl_M.RData`](./output/review_DataAppl_M.RData), are described in the Section body along with Tables. While we present [`eda_multivariate.png`](./output/eda_multivariate.png) in the Supplement Section 7.
 
 ### Supplement Section 2.3 - Monte Carlo approximation for upper bound simulations
 
-Running `Asymp_MC_sim.R` produces the results, contained in the following object: 
-* _KL divergence upper bound simulations_: `upperbound.RData`;
-* _KL divergence upper bound plots_: `upperbound_sim.png`.
+Running [`Asymp_MC_sim.R`](./script/Asymp_MC_sim.R) produces the results, contained in the following object: 
+* _KL divergence upper bound simulations_: [`upperbound.RData`](./output/upperbound.RData);
+* _KL divergence upper bound plots_: [`upperbound_sim.png`](./output/upperbound_sim.png).
 
-In this section is displayed `upperbound_sim.png`.
+In this section is displayed [`upperbound_sim.png`](./output/upperbound_sim.png).
 
 ### Supplement Section 4.1 - Computational Performance
 
-Running `exec_comparison_sim_M.R` produces the results, contained in the following objects: 
-* _timing & RMSPE results_: `simulation_multivariate_5_500.Rdata`, `simulation_multivariate_5_1000.Rdata`, `simulation_multivariate_10_500.Rdata`, `simulation_multivariate_10_1000.Rdata`;
-* _interpolation plots_: `surface_M_5_500.png`, `surface_M_5_1000.png`, `surface_M_10_500.png`, `surface_M_10_1000.png`;
-* _uncertainty quantification plots_: `UC_M_5_500.png`, `UC_M_5_1000.png`, `UC_M_10_500.png`, `UC_M_10_1000.png`;
-* _posterior credible interval plots_: `CIpost_M_5_500.png`, `CIpost_M_5_1000.png`, `CIpost_M_10_500.png`, `CIpost_M_10_1000.png`.
+Running [`exec_comparison_sim_M.R`](./script/exec_comparison_sim_M.R) produces the results, contained in the following objects: 
+* _timing & RMSPE results_: [`simulation_multivariate_5_500.Rdata`](./output/simulation_multivariate_5_500.Rdata), [`simulation_multivariate_5_1000.Rdata`](./output/simulation_multivariate_5_1000.Rdata), [`simulation_multivariate_10_500.Rdata`](./output/simulation_multivariate_10_500.Rdata), [`simulation_multivariate_10_1000.Rdata`](./output/simulation_multivariate_10_1000.Rdata);
+* _interpolation plots_: [`surface_M_5_500.png`](./output/surface_M_5_500.png), [`surface_M_5_1000.png`](./output/surface_M_5_1000.png), [`surface_M_10_500.png`](./output/surface_M_10_500.png), [`surface_M_10_1000.png`](./output/surface_M_10_1000.png);
+* _uncertainty quantification plots_: [`UC_M_5_500.png`](./output/UC_M_5_500.png), [`UC_M_5_1000.png`](./output/UC_M_5_1000.png), [`UC_M_10_500.png`](./output/UC_M_10_500.png), [`UC_M_10_1000.png`](./output/UC_M_10_1000.png);
+* _posterior credible interval plots_: [`CIpost_M_5_500.png`](./output/CIpost_M_5_500.png), [`CIpost_M_5_1000.png`](./output/CIpost_M_5_1000.png), [`CIpost_M_10_500.png`](./output/CIpost_M_10_500.png), [`CIpost_M_10_1000.png`](./output/CIpost_M_10_1000.png).
 
-Running `modifications_TimeComp.R`, produces the results, contained in the following objects: 
-* _Running time competitor_: `review_TimeComp_5k_M.RData`, `review_TimeComp_10k_M.RData`;
+Running [`modifications_TimeComp.R`](./script/modifications_TimeComp.R), produces the results, contained in the following objects: 
+* _Running time competitor_: [`review_TimeComp_5k_M.RData`](./output/review_TimeComp_5k_M.RData), [`review_TimeComp_10k_M.RData`](./output/review_TimeComp_10k_M.RData);
 
-In this section are displayed `surface_M_5_500.png`, `UC_M_5_500.png`, `CIpost_M_5_500.png` as Figures, and the contents of `simulation_multivariate_5_500.Rdata`, `simulation_multivariate_5_1000.Rdata`, `simulation_multivariate_10_500.Rdata`, `simulation_multivariate_10_1000.Rdata`, `review_TimeComp_5k_M.RData`, and `review_TimeComp_10k_M.RData` within a Table.
+In this section are displayed [`surface_M_5_500.png`](./output/surface_M_5_500.png), [`UC_M_5_500.png`](./output/UC_M_5_500.png), [`CIpost_M_5_500.png`](./output/CIpost_M_5_500.png) as Figures, and the contents of [`simulation_multivariate_5_500.Rdata`](./output/simulation_multivariate_5_500.Rdata), [`simulation_multivariate_5_1000.Rdata`](./output/simulation_multivariate_5_1000.Rdata), [`simulation_multivariate_10_500.Rdata`](./output/simulation_multivariate_10_500.Rdata), [`simulation_multivariate_10_1000.Rdata`](./output/simulation_multivariate_10_1000.Rdata), [`review_TimeComp_5k_M.RData`](./output/review_TimeComp_5k_M.RData), and [`review_TimeComp_10k_M.RData`](./output/review_TimeComp_10k_M.RData) within a Table.
 
-Here the notation is the following: _type_setting_n_subsetsize_. For example, type = surface, setting = M (multivariate), n = 5 (thousand), and subset size = 500, lead to the surface plot interpolation of the $n=5000$ and $K=10$ dataset, for multivariate models, that is `surface_M_5_500.png`
+Here the notation is the following: _type_setting_n_subsetsize_. For example, type = surface, setting = M (multivariate), n = 5 (thousand), and subset size = 500, lead to the surface plot interpolation of the $n=5000$ and $K=10$ dataset, for multivariate models, that is [`surface_M_5_500.png`](./output/surface_M_5_500.png)
 
 ### Supplement Section 4.2 - Subset size sensitivity
 
-Running `exec_subset_sensitivity.R` produces the results, contained in the following object: 
-* _subsets dimension sensitivity plot_: `subset_sens.png`.
+Running [`exec_subset_sensitivity.R`](./script/exec_subset_sensitivity.R) produces the results, contained in the following object: 
+* _subsets dimension sensitivity plot_: [`subset_sens.png`](./output/subset_sens.png).
 
-In this section is displayed `subset_sens.png`.
+In this section is displayed [`subset_sens.png`](./output/subset_sens.png).
 
 ### Supplement Section 6 - Application (Univariate)
 
-Running `exec_analysis_univariate.R`, and `exec_analysis_univariate250.R`, produces the results, contained in the following objects: 
-* _data analysis results_: `dataanalysis_univariate.Rdata`, `dataanalysis_univariate250.Rdata`;
-* _interpolation & uncertainty quantification plots_: `dataanalysis_univariate.png`, `dataanalysis_univariate250.png`;
-* _exploratory spatial data analysis_: `eda_univariate.png`.
+Running [`exec_analysis_univariate.R`](./script/exec_analysis_univariate.R), and [`exec_analysis_univariate250.R`](./script/exec_analysis_univariate250.R), produces the results, contained in the following objects: 
+* _data analysis results_: [`dataanalysis_univariate.Rdata`](./output/dataanalysis_univariate.Rdata), [`dataanalysis_univariate250.Rdata`](./output/dataanalysis_univariate250.Rdata);
+* _interpolation & uncertainty quantification plots_: [`dataanalysis_univariate.png`](./output/dataanalysis_univariate.png), [`dataanalysis_univariate250.png`](./output/dataanalysis_univariate250.png);
+* _exploratory spatial data analysis_: [`eda_univariate.png`](./output/eda_univariate.png).
 
-Running `modifications_DataAppl.R`, produces the results, contained in the following objects: 
-* _AI model competitor results_: `review_DataAppl.RData`;
+Running [`modifications_DataAppl.R`](./script/modifications_DataAppl.R), produces the results, contained in the following objects: 
+* _AI model competitor results_: [`review_DataAppl.RData`](./output/review_DataAppl.RData);
 
-In this section is displayed `dataanalysis_univariate.png` as a Figure, while the results in `dataanalysis_univariate.Rdata`, `dataanalysis_univariate250.Rdata`, and `review_DataAppl.RData`, are described in the Section body along with Tables. While we present `eda_univariate.png` in the Supplement Section 7.
+In this section is displayed [`dataanalysis_univariate.png`](./output/dataanalysis_univariate.png) as a Figure, while the results in [`dataanalysis_univariate.Rdata`](./output/dataanalysis_univariate.Rdata), [`dataanalysis_univariate250.Rdata`](./output/dataanalysis_univariate250.Rdata), and [`review_DataAppl.RData`](./output/review_DataAppl.RData), are described in the Section body along with Tables. While we present [`eda_univariate.png`](./output/eda_univariate.png) in the Supplement Section 7.
+
 
 
 --------------------------------------------------------------------------------
