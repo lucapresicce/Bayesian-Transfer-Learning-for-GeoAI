@@ -43,9 +43,9 @@ fit_loop <- function(i) {
   p <- ncol(Xi); q <- ncol(Yi)
   bps <- spBPS::BPS_weights_MvT(data = list(Y = Yi, X = Xi),
                                 priors = list(mu_B = matrix(0, nrow = p, ncol = q),
-                                              V_r = diag(10, p),
-                                              Psi = diag(1, q),
-                                              nu = 3), coords = crd_i,
+                                              V_r = diag(100, p),
+                                              Psi = diag(q*100, q),
+                                              nu = q), coords = crd_i,
                                 hyperpar = list(alpha = alfa_seq, phi = phi_seq), K = 5)
   w_hat <- bps$W
   epd <- bps$epd
@@ -63,9 +63,9 @@ pred_loop <- function(r) {
   result <- spBPS::BPS_post_MvT(data = list(Y = Ys, X = Xs), coords = crds,
                                 X_u = X_u, crd_u = crd_u,
                                 priors = list(mu_B = matrix(0, nrow = p, ncol = q),
-                                              V_r = diag(10, p),
-                                              Psi = diag(1, q),
-                                              nu = 3),
+                                              V_r = diag(100, p),
+                                              Psi = diag(q*100, q),
+                                              nu = q),
                                 hyperpar = list(alpha = alfa_seq, phi = phi_seq),
                                 W = Ws, R = 1)
   
