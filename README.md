@@ -8,8 +8,8 @@ In addition, also all the functions implemented in the package `spBPS` ([**Luca 
 | Folder | Contents |
 | :--- | :---: |
 | **code** | `spBPS` package info & Rcpp sourcing functions in `.cpp` format |
-| **data** | preprocessed dataset in `.Rdata` format & preprocessing scripts |
-| **output** | data analyses/simulations results in `.Rdata` format & figures in paper/supplement  |
+| **data** | preprocessed dataset in `.RData` format & preprocessing scripts |
+| **output** | data analyses/simulations results in `.RData` format & figures in paper/supplement  |
 | **script** | data analyses/simulations working scripts in `.R` format |
 
 
@@ -58,29 +58,29 @@ Cool! You are ready to start, now you too could perform **_fast & feasible_** Ba
 
 ### Section 5.1 - Predictive coverage performance
 
-Running [`replicationsNNGPDBPS.R`](./script/replicationsNNGPDBPS.R) produces the results, contained in the following objects: 
-* _replication results_: `replicationsNNGPDBPS.RData`;
+Running [`Predictive_coverage_simulation.R`](./script/Predictive_coverage_simulation.R) produces the results, contained in the following objects: 
+* _replication results_: `Predictive_coverage_simulation.RData`;
 
-In this section, the contents of 50 replications, collected in `replicationsNNGPDBPS.Rdata`, are described in the Section body along with Tables. 
+In this section, the contents of 50 replications, collected in `Predictive_coverage_simulation.RData`, are described in the Section body along with Tables. 
 
-**Note:** The output file `replicationsNNGPDBPS.RData` is **not included in this repository** because its size exceeds GitHub's 100 MB limit (the file is approximately 120 MB). However, it is **fully reproducible** by running the script [`replicationsNNGPDBPS.R`](./script/replicationsNNGPDBPS.R).  
-Please be aware that this script may take a **long time to execute**, depending on your system’s resources. If needed, the original `replicationsNNGPDBPS.RData` file can be provided upon request.
+**Note:** The output file `Predictive_coverage_simulation.RData` is **not included in this repository** because its size exceeds GitHub's 100 MB limit (the file is approximately 120 MB). However, it is **fully reproducible** by running the script [`Predictive_coverage_simulation.R`](./script/Predictive_coverage_simulation.R).  
+Please be aware that this script may take a **long time to execute**, depending on your system’s resources. If needed, the original `Predictive_coverage_simulation.RData` file can be provided upon request.
 
 ### Section 5.2 - Transfer Learning in $\mathscr{M}$-closed & $\mathscr{M}$-open settings
 
-Running [`modifications_TL_M.R`](./script/modifications_TL_M.R) produces the results, contained in the following objects: 
+Running [`Transfer_learning_simulation.R`](./script/Transfer_learning_simulation.R) produces the results, contained in the following objects: 
 * _replication results_: `replication_results.RData`;
 * _posterior metrics plot_: [`TL_post.png`](./output/TL_post.png);
 * _predictive metrics plot_: [`TL_pred.png`](./output/TL_pred.png).
 
-In this section are displayed [`TL_post.png`](./output/TL_post.png), [`TL_pred.png`](./output/TL_pred.png) as Figures, and the contents of 50 replications, collected in `replication_results.Rdata`. 
+In this section are displayed [`TL_post.png`](./output/TL_post.png), [`TL_pred.png`](./output/TL_pred.png) as Figures, and the contents of 50 replications, collected in `replication_results.RData`. 
 
-**Note:** The output file `replications_results.RData` is **not included in this repository** because its size exceeds GitHub's 100 MB limit (the file is approximately 210 MB). However, it is **fully reproducible** by running the script [`modifications_TL_M.R`](./script/modifications_TL_M.R).  
+**Note:** The output file `replications_results.RData` is **not included in this repository** because its size exceeds GitHub's 100 MB limit (the file is approximately 210 MB). However, it is **fully reproducible** by running the script [`Transfer_learning_simulation.R`](./script/Transfer_learning_simulation.R).  
 Please be aware that this script may take a **long time to execute**, depending on your system’s resources. If needed, the original `replications_results.RData` file can be provided upon request.
 
 ### Section 5.3 - Amortized Bayesian Inference
 
-Running [`ABI_matrixNN.R`](./script/ABI_matrixNN.R) produces the results, contained in the following objects: 
+Running [`Amortized_bayesian_inference_simulation.R`](./script/Amortized_bayesian_inference_simulation.R) produces the results, contained in the following objects: 
 * _interpolation plots_: [`heatmap-amortized.png`](./output/heatmap-amortized.png);
 * _posterior credible interval plots_: [`parameters-amortized.png`](./output/parameters-amortized.png).
 
@@ -88,34 +88,36 @@ This section displayed [`heatmap-amortized.png`](./output/heatmap-amortized.png)
 
 ### Section 6 - Application
 
-Running [`exec_analysis_multivariate.R`](./script/exec_analysis_multivariate.R), and [`exec_analysis_multivariate250.R`](./script/exec_analysis_multivariate250.R), produces the results, contained in the following objects: 
-* _data analysis results_: [`dataanalysis_multivariate.Rdata`](./output/dataanalysis_multivariate.Rdata), [`dataanalysis_multivariate250.Rdata`](./output/dataanalysis_multivariate250.Rdata);
-* _interpolation & uncertainty quantification plots_: [`dataanalysis_multivariate_RR.png`](./output/dataanalysis_multivariate_RR.png), [`dataanalysis_multivariate_NDVI.png`](./output/dataanalysis_multivariate_NDVI.png), [`dataanalysis_multivariate_RR250.png`](./output/dataanalysis_multivariate_RR250.png), [`dataanalysis_multivariate_NDVI250.png`](./output/dataanalysis_multivariate_NDVI250.png);
-* _exploratory spatial data analysis_: [`eda_multivariate.png`](./output/eda_multivariate.png).
+Running [`Vegetation_data_analysis.R`](./script/Vegetation_data_analysis.R) produces the results, contained in the following objects: 
+* _data analysis results_: `data_analysis.RData`;
+* _predictions & diagnostics plots_: [`NDVI500_map.png`](./output/NDVI500_map.png), [`RR500_map.png`](./output/RR500_map.png);
 
-Running [`modifications_DataAppl_M.R`](./script/modifications_DataAppl_M.R), produces the results, contained in the following objects: 
-* _AI model competitor results_: [`review_DataAppl_M.RData`](./output/review_DataAppl_M.RData);
+Running [`Spatial_eda.R`](./script/Spatial_eda.R) produces the results, contained in the following objects: 
+* _exploratory spatial data analysis_: [`variogram.png`](./output/variogram.png), [`crossvariogram.png`](./output/crossvariogram.png).
 
-In this section are displayed [`dataanalysis_multivariate_RR.png`](./output/dataanalysis_multivariate_RR.png), and [`dataanalysis_multivariate_NDVI.png`](./output/dataanalysis_multivariate_NDVI.png) as Figures, while the results in [`dataanalysis_multivariate.Rdata`](./output/dataanalysis_multivariate.Rdata), [`dataanalysis_multivariate250.Rdata`](./output/dataanalysis_multivariate250.Rdata), and [`review_DataAppl_M.RData`](./output/review_DataAppl_M.RData), are described in the Section body along with Tables. While we present [`eda_multivariate.png`](./output/eda_multivariate.png) in the Appendix Section D.
+In this section are displayed [`NDVI500_map.png`](./output/NDVI500_map.png), and [`RR500_map.png`](./output/RR500_map.png) as Figures, while the results in [`data_analysis.RData`](./output/data_analysis.RData) are described in the Section body along with Tables. While we present [`variogram.png`](./output/variogram.png),[`crossvariogram.png`](./output/crossvariogram.png) in the Appendix Section D.
+
+**Note:** The output file `data_analysis.RData` is **not included in this repository** because its size exceeds GitHub's 100 MB limit (the file is approximately 430 MB). However, it is **fully reproducible** by running the script [`Vegetation_data_analysis.R`](./script/Vegetation_data_analysis.R).  
+Please be aware that this script may take a **long time to execute**, depending on your system’s resources. If needed, the original `data_analysis.RData` file can be provided upon request.
 
 ### Appendix Section C.1 - Computational Performance
 
-Running [`exec_comparison_sim_M.R`](./script/exec_comparison_sim_M.R) produces the results, contained in the following objects: 
-* _timing & RMSPE results_: [`simulation_multivariate_5_500.Rdata`](./output/simulation_multivariate_5_500.Rdata), [`simulation_multivariate_5_1000.Rdata`](./output/simulation_multivariate_5_1000.Rdata), [`simulation_multivariate_10_500.Rdata`](./output/simulation_multivariate_10_500.Rdata), [`simulation_multivariate_10_1000.Rdata`](./output/simulation_multivariate_10_1000.Rdata);
+Running [`Computational_performance_simulation_1.R`](./script/Computational_performance_simulation_1.R) produces the results, contained in the following objects: 
+* _timing & RMSPE results_: [`simulation_multivariate_5_500.RData`](./output/simulation_multivariate_5_500.RData), [`simulation_multivariate_5_1000.RData`](./output/simulation_multivariate_5_1000.RData), [`simulation_multivariate_10_500.RData`](./output/simulation_multivariate_10_500.RData), [`simulation_multivariate_10_1000.RData`](./output/simulation_multivariate_10_1000.RData);
 * _interpolation plots_: [`surface_M_5_500.png`](./output/surface_M_5_500.png), [`surface_M_5_1000.png`](./output/surface_M_5_1000.png), [`surface_M_10_500.png`](./output/surface_M_10_500.png), [`surface_M_10_1000.png`](./output/surface_M_10_1000.png);
 * _uncertainty quantification plots_: [`UC_M_5_500.png`](./output/UC_M_5_500.png), [`UC_M_5_1000.png`](./output/UC_M_5_1000.png), [`UC_M_10_500.png`](./output/UC_M_10_500.png), [`UC_M_10_1000.png`](./output/UC_M_10_1000.png);
 * _posterior credible interval plots_: [`CIpost_M_5_500.png`](./output/CIpost_M_5_500.png), [`CIpost_M_5_1000.png`](./output/CIpost_M_5_1000.png), [`CIpost_M_10_500.png`](./output/CIpost_M_10_500.png), [`CIpost_M_10_1000.png`](./output/CIpost_M_10_1000.png).
 
-Running [`modifications_TimeComp.R`](./script/modifications_TimeComp.R), produces the results, contained in the following objects: 
+Running [`Computational_performance_simulation_2.R`](./script/Computational_performance_simulation_2.R) produces the results, contained in the following objects: 
 * _Running time competitor_: [`review_TimeComp_5k_M.RData`](./output/review_TimeComp_5k_M.RData), [`review_TimeComp_10k_M.RData`](./output/review_TimeComp_10k_M.RData);
 
-In this section are displayed [`surface_M_5_500.png`](./output/surface_M_5_500.png), [`UC_M_5_500.png`](./output/UC_M_5_500.png), [`CIpost_M_5_500.png`](./output/CIpost_M_5_500.png) as Figures, and the contents of [`simulation_multivariate_5_500.Rdata`](./output/simulation_multivariate_5_500.Rdata), [`simulation_multivariate_5_1000.Rdata`](./output/simulation_multivariate_5_1000.Rdata), [`simulation_multivariate_10_500.Rdata`](./output/simulation_multivariate_10_500.Rdata), [`simulation_multivariate_10_1000.Rdata`](./output/simulation_multivariate_10_1000.Rdata), [`review_TimeComp_5k_M.RData`](./output/review_TimeComp_5k_M.RData), and [`review_TimeComp_10k_M.RData`](./output/review_TimeComp_10k_M.RData) within a Table.
+In this section are displayed [`surface_M_5_500.png`](./output/surface_M_5_500.png), [`UC_M_5_500.png`](./output/UC_M_5_500.png), [`CIpost_M_5_500.png`](./output/CIpost_M_5_500.png) as Figures, and the contents of [`simulation_multivariate_5_500.RData`](./output/simulation_multivariate_5_500.RData), [`simulation_multivariate_5_1000.RData`](./output/simulation_multivariate_5_1000.RData), [`simulation_multivariate_10_500.RData`](./output/simulation_multivariate_10_500.RData), [`simulation_multivariate_10_1000.RData`](./output/simulation_multivariate_10_1000.RData), [`review_TimeComp_5k_M.RData`](./output/review_TimeComp_5k_M.RData), and [`review_TimeComp_10k_M.RData`](./output/review_TimeComp_10k_M.RData) within a Table.
 
-Here the notation is the following: _type_setting_n_subsetsize_. For example, type = surface, setting = M (multivariate), n = 5 (thousand), and subset size = 500, lead to the surface plot interpolation of the $n=5000$ and $K=10$ dataset, for multivariate models, that is [`surface_M_5_500.png`](./output/surface_M_5_500.png)
+Here, the notation is the following: _type_setting_n_subsetsize_. For example, type = surface, setting = M (multivariate), n = 5 (thousand), and subset size = 500, lead to the surface plot interpolation of the $n=5000$ and $K=10$ dataset, for multivariate models, that is [`surface_M_5_500.png`](./output/surface_M_5_500.png)
 
 ### Appendix Section C.2 - Monte Carlo approximation for upper bound simulations
 
-Running [`Asymp_MC_sim.R`](./script/Asymp_MC_sim.R) produces the results, contained in the following object: 
+Running [`Upperbound_simulation.R`](./script/Upperbound_simulation.R) produces the results, contained in the following object: 
 * _KL divergence upper bound simulations_: [`upperbound.RData`](./output/upperbound.RData);
 * _KL divergence upper bound plots_: [`upperbound_sim.png`](./output/upperbound_sim.png).
 
@@ -123,7 +125,7 @@ In this section is displayed [`upperbound_sim.png`](./output/upperbound_sim.png)
 
 ### Appendix Section C.3 - Subset size sensitivity
 
-Running [`exec_subset_sensitivity.R`](./script/exec_subset_sensitivity.R) produces the results, contained in the following object: 
+Running [`Subset_sensitivity_simualtion.R`](./script/Subset_sensitivity_simualtion.R) produces the results, contained in the following object: 
 * _subsets dimension sensitivity plot_: [`subset_sens.png`](./output/subset_sens.png).
 
 In this section is displayed [`subset_sens.png`](./output/subset_sens.png).
